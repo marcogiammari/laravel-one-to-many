@@ -17,7 +17,7 @@ class ProjectSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        $stacksData = config('store');
+        $stacksData = config('store.stacks');
 
 
         for ($i = 0; $i < 10; $i++) {
