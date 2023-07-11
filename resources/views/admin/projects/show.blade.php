@@ -6,7 +6,14 @@
             <div class="col-12 col-lg-6 p-5">
                 <img class="w-100" src="{{ $project->image ?? Vite::asset('resources/images/image-not-available.jpg') }}"
                     alt="{{ $project->name }}">
-                <div class="position-absolute bottom-0 m-3 d-flex gap-2">
+            </div>
+            <div class="col-12 col-lg-6 p-5 d-flex flex-column">
+                <h2>{{ $project->name }}</h2>
+                <hr>
+                <p><span class="fw-bold">Stack: </span>{{ $project->stack }}</p>
+                <p>{{ $project->description }}</p>
+                <p><span class="fw-bold">Type: </span>{{ $project->type->name ?? 'Type not available' }}</p>
+                <div class="d-flex gap-2">
                     <a href="{{ route('admin.projects.edit', $project) }}"><button class="btn bg-primary-subtle w-100"><i
                                 class="fa-solid fa-gear m-2"></i>Edit
                             Project</button></a>
@@ -19,12 +26,6 @@
                                 Project</button></a>
                     </form>
                 </div>
-            </div>
-            <div class="col-12 col-lg-6 p-5 d-flex flex-column">
-                <h2>{{ $project->name }}</h2>
-                <hr>
-                <p><span class="fw-bold">Stack</span>: {{ $project->stack }}</p>
-                <p>{{ $project->description }}</p>
             </div>
         </div>
     </div>
