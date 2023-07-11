@@ -29,6 +29,7 @@ class UpdateProjectRequest extends FormRequest
             'image' => 'nullable|max:100',
             'link' => 'required|url|max:200',
             'stack' => 'required|max:20',
+            'type_id' => 'required|exists:types,id'
         ];
     }
 }

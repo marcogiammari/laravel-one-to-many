@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller; // Controller di base da importare
 //...ecc
 
 use App\Models\Project;
+use App\Models\Type;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 
@@ -32,7 +33,8 @@ class ProjectController extends Controller
     public function create()
     {
         $stacks = Project::select('stack')->distinct()->get();
-        return view('admin.projects.create', compact('stacks'));
+        $types = Type::all();
+        return view('admin.projects.create', compact('stacks', 'types'));
     }
 
     /**
@@ -73,7 +75,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $stacks = Project::select('stack')->distinct()->get();
-        return view('admin.projects.edit', compact('project', 'stacks'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'stacks', 'types'));
     }
 
     /**

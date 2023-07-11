@@ -74,6 +74,21 @@
                 @enderror
 
             </div>
+            <div class="mb-3">
+
+                <label for="selectType" class="form-label">Type</label>
+                <select id="selectType" name="type_id" class="form-select" aria-label="Default select example">
+                    <option selected disabled>Select type</option>
+                    @foreach ($types as $obj)
+                        <option value="{{ $obj->id }}">{{ $obj->name }}</option>
+                    @endforeach
+                </select>
+
+                @error('type')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
