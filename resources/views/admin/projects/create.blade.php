@@ -79,8 +79,8 @@
                 <label for="selectType" class="form-label">Type</label>
                 <select id="selectType" name="type_id" class="form-select" aria-label="Default select example">
                     <option selected disabled>Select type</option>
-                    @foreach ($types as $obj)
-                        <option value="{{ $obj->id }}">{{ $obj->name }}</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type }}">{{ $type }}</option>
                     @endforeach
                 </select>
 

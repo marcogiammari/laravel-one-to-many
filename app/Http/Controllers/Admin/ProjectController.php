@@ -33,7 +33,8 @@ class ProjectController extends Controller
     public function create()
     {
         $stacks = Project::select('stack')->distinct()->get();
-        $types = Type::all();
+        $types = Type::pluck('name')->all();
+
         return view('admin.projects.create', compact('stacks', 'types'));
     }
 
@@ -75,7 +76,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $stacks = Project::select('stack')->distinct()->get();
-        $types = Type::all();
+        $types = Type::pluck('name')->all();
+
         return view('admin.projects.edit', compact('project', 'stacks', 'types'));
     }
 
