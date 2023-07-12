@@ -76,11 +76,12 @@
             </div>
             <div class="mb-3">
 
+
                 <label for="selectType" class="form-label">Type</label>
                 <select id="selectType" name="type_id" class="form-select" aria-label="Default select example">
                     <option selected disabled>Select type</option>
-                    @foreach ($types as $type)
-                        <option value="{{ $type }}">{{ $type }}</option>
+                    @foreach ($types as $i => $type)
+                        <option value="{{ $i + 1 }}">{{ $type }}</option>
                     @endforeach
                 </select>
 

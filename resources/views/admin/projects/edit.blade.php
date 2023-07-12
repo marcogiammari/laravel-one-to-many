@@ -80,8 +80,8 @@
                 <label for="selectType" class="form-label">Type</label>
                 <select id="selectType" name="type_id" class="form-select" aria-label="Default select example">
                     <option selected disabled>Select type</option>
-                    @foreach ($types as $type)
-                        <option @selected(old($type) == $type) value="{{ $type }}">{{ $type }}</option>
+                    @foreach ($types as $i => $type)
+                        <option @selected(old($type) == $type) value="{{ $i + 1 }}">{{ $type }}</option>
                     @endforeach
                 </select>
 

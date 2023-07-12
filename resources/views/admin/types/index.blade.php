@@ -5,10 +5,10 @@
         <h1 class="text-center pb-5">Types</h1>
         <div class="row">
             <div class="col-4 p-0 mb-3">
-                <button class="btn btn-outline-primary">Add New Type
-                    <a href="{{ route('admin.types.create') }}">
+                <a href="{{ route('admin.types.create') }}">
+                    <button class="btn bg-primary-subtle">Add New Type
                         <i class="fa-solid fa-plus mx-1"></i>
-                    </a>
+                </a>
                 </button>
             </div>
 
