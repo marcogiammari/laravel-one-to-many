@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('image', 100)->nullable();
             $table->string('link', 200);
-            $table->string('stack', 20);
+            $table->string('stack', 100);
             $table->timestamps();
         });
     }
